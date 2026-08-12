@@ -24,8 +24,10 @@ python blade_generator.py
 
 This prints the blade schedule to the console and writes two files to the working directory:
 
-File	Description
+File	Description:
+
 blade.stl	3D-printable blade mesh
+
 blade_schedule.csv	Per-station radius, chord, twist, and flow angle — useful for CNC rib-cutting as a print-free alternative
 Configuration
 
