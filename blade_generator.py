@@ -83,7 +83,7 @@ for ri, ci, ti, pi_ in zip(r_stations, chord, twist, phi_deg):
     print(f"{ri*1000:8.1f} {ci*1000:11.2f} {np.degrees(ti):12.2f} {pi_:10.2f}")
 
 # save table for reference / CNC rib cutting
-np.savetxt("/home/claude/turbine/blade_schedule.csv",
+np.savetxt("blade_schedule.csv",
            np.column_stack([r_stations, chord, np.degrees(twist), phi_deg]),
            header="r_m,chord_m,twist_deg,phi_deg", delimiter=",", comments="")
 
@@ -146,6 +146,6 @@ def write_stl(sections, filename, root_cap=True, tip_cap=True):
             f.write("  endloop\n endfacet\n")
         f.write("endsolid blade\n")
 
-write_stl(sections, "/home/claude/turbine/blade.stl")
+write_stl(sections, "blade.stl")
 print("\nWrote blade.stl and blade_schedule.csv")
 print(f"Rotor swept area: {np.pi*R**2:.4f} m^2  |  Rotor diameter: {2*R*100:.0f} cm")
